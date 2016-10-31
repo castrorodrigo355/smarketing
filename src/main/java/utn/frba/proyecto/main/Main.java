@@ -8,9 +8,11 @@ import org.uqbarproject.jpa.java8.extras.PerThreadEntityManagers;
 
 import utn.frba.proyecto.controladores.CamaraController;
 import utn.frba.proyecto.controladores.MarcaController;
+import utn.frba.proyecto.controladores.PublicidadController;
 import utn.frba.proyecto.controladores.UsuarioController;
 import utn.frba.proyecto.servicios.CamaraService;
 import utn.frba.proyecto.servicios.MarcaService;
+import utn.frba.proyecto.servicios.PublicidadService;
 import utn.frba.proyecto.servicios.UsuarioService;
 
 public class Main {
@@ -23,6 +25,7 @@ public class Main {
 		new CamaraController(new CamaraService());
 		new UsuarioController(new UsuarioService());
 		new MarcaController(new MarcaService());
+		new PublicidadController(new PublicidadService());
 
 		after((request, response) -> {
 			PerThreadEntityManagers.getEntityManager();
